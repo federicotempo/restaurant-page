@@ -1,3 +1,4 @@
 import "./style.css";
+import { renderHomePage } from "./homePage";
 
-console.log("Restaurant Page");
+renderHomePage();
