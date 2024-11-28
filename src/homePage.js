@@ -1,4 +1,4 @@
-export const renderHomePage = () => {
+export const homePage = () => {
   const content = document.querySelector("#content");
   const restaurantTitle = document.createElement("h1");
   restaurantTitle.classList.add("restaurant-title");
