@@ -22,7 +22,7 @@ const cleanContent = () => {
   content.innerHTML = "";
 };
 
-const tabsButtons = document.querySelectorAll("#btn-container");
+const tabsButtons = document.querySelectorAll("#btn-container button");
 tabsButtons.forEach((button) => {
   button.addEventListener("click", handleClick);
 });
