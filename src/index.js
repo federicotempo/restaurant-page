@@ -1,4 +1,28 @@
 import "./style.css";
-import { renderHomePage } from "./homePage";
+import { homePage } from "./homePage";
+import { menuPage } from "./menuPage";
 
-renderHomePage();
+homePage();
+
+const tabRenderers = {
+  home: homePage,
+  menu: menuPage,
+};
+
+const handleClick = (event) => {
+  cleanContent();
+  const tabId = event.target.dataset.tab;
+  if (tabRenderers[tabId]) {
+    tabRenderers[tabId]();
+  }
+};
+
+const cleanContent = () => {
+  const content = document.querySelector("#content");
+  content.innerHTML = "";
+};
+
+const tabsButtons = document.querySelectorAll("#btn-container");
+tabsButtons.forEach((button) => {
+  button.addEventListener("click", handleClick);
+});
